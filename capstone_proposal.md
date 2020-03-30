@@ -56,9 +56,15 @@ Accuracy is the percentage of values the model labelled correctly.
 
 ### Project Design
 
-Note: _(approx. 1 page)_
+First, taking a look at the data is important and getting to know the features. Some of the columns are not as important in our prediction such as the id number of a person and therefore, we can avoid using such columns in our model.
 
-In this final section, summarize a theoretical workflow for approaching a solution given the problem. Provide thorough discussion for what strategies you may consider employing, what analysis of the data might be required before being used, or which algorithms will be considered for your implementation. The workflow and discussion that you provide should align with the qualities of the previous sections. Additionally, you are encouraged to include small visualizations, pseudo-code, or diagrams to aid in describing the project design, but it is not required. The discussion should clearly outline your intended workflow of the capstone project.
+To aid in choosing important features we can find the correlations of the numerical columns and identify those that are correlated. If the correlation is high, we can avoid using such columns as well.
+
+Next, we will need to clean our data to avoid having Null values.
+
+Finally, we build our models and deploy them for testing. After we pick the best model, we shut down and delete the others.
+
+Next, deploying our model with an API endpoint that communicates with a webpage by sending out the probability of a person surviving upon receiving the characteristics of a person.
 
 -----------
 
