@@ -8,8 +8,6 @@ March 30th, 2019
 
 ## Proposal
 
-Note: _(approx. 2-3 pages)_
-
 ### Domain Background
 
 The Titanic data set is famous data set that is part of an introductory Kaggle competition.
