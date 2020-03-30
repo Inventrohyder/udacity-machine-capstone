@@ -50,9 +50,9 @@ The benchmark model to use would be a statistical model. One would be a SkLearn 
 
 ### Evaluation Metrics
 
-Note: _(approx. 1-2 paragraphs)_
+The main quantity that can help us evaluate our models is the accuracy of the models. Unlike in fraud detection, the rate of false positives and false negatives is not as important but it also does help us in picking a better model. Although, accuracy is the best metric in this situation.
 
-In this section, propose at least one evaluation metric that can be used to quantify the performance of both the benchmark model and the solution model. The evaluation metric(s) you propose should be appropriate given the context of the data, the problem statement, and the intended solution. Describe how the evaluation metric(s) are derived and provide an example of their mathematical representations (if applicable). Complex evaluation metrics should be clearly defined and quantifiable (can be expressed in mathematical or logical terms).
+Accuracy is the percentage of values the model labelled correctly.
 
 ### Project Design
 
