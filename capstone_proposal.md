@@ -40,9 +40,9 @@ Finally, when we deploy the model, we can send in characteristics of a person an
 
 ### Solution Statement
 
-Note: _(approx. 1 paragraph)_
+The solution that we will implement are two different models, an XGBoost logistic model as well as a PyTorch neural network. Since our expected output is binary then getting a probability between 0 and 1 can easily be rounded of to a binary value.
 
-In this section, clearly describe a solution to the problem. The solution should be applicable to the project domain and appropriate for the data set(s) or input(s) given. Additionally, describe the solution thoroughly such that it is clear that the solution is quantifiable (the solution can be expressed in mathematical or logical terms) , measurable (the solution can be measured by some metric and clearly observed), and replicable (the solution can be reproduced and occurs more than once).
+In the deployed web app that we can input characteristics of a person, the output would not be binary but a probability of survival.
 
 ### Benchmark Model
 
