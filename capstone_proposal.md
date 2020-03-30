@@ -67,11 +67,3 @@ Finally, we build our models and deploy them for testing. After we pick the best
 Next, deploying our model with an API endpoint that communicates with a webpage by sending out the probability of a person surviving upon receiving the characteristics of a person.
 
 -----------
-
-**Before submitting your proposal, ask yourself. . .**
-
-- Does the proposal you have written follow a well-organized structure similar to that of the project template?
-- Is each section (particularly **Solution Statement** and **Project Design**) written in a clear, concise and specific fashion? Are there any ambiguous terms or phrases that need clarification?
-- Would the intended audience of your project be able to understand your proposal?
-- Have you properly proofread your proposal to assure there are minimal grammatical and spelling mistakes?
-- Are all the resources used for this project correctly cited and referenced?
