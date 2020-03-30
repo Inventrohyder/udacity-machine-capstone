@@ -2,9 +2,9 @@
 
 ## Capstone Proposal
 
-Joe Udacity  
+Haitham Alhad Hyder
 
-December 31st, 2050
+March 30th, 2019
 
 ## Proposal
 
@@ -12,9 +12,13 @@ Note: _(approx. 2-3 pages)_
 
 ### Domain Background
 
-Note:  _(approx. 1-2 paragraphs)_
+The Titanic data set is famous data set that is part of an introductory Kaggle competition.
 
-In this section, provide brief details on the background information of the domain from which the project is proposed. Historical information relevant to the project should be included. It should be clear how or why a problem in the domain can or should be solved. Related academic research should be appropriately cited in this section, including why that research is relevant. Additionally, a discussion of your personal motivation for investigating a particular problem in the domain is encouraged but not required.
+> Citation: Kaggle. (n.d.). Titanic: Machine Learning from Disaster. Retrieved from <https://www.kaggle.com/c/titanic/overview>
+
+It is about the infamous RMS Titanic, an "unsinkable" ship that made the headlines on April 15, 1912. Out of the 2224 passengers and crew, only 1502 of them survived. Although it comes down to chance if a person survives, the data shows that some groups of people have a higher chance of surviving. To solve the problem of identifying those who have a higher chance of survival we will have to come up with a machine learning model that can gives us the probability of someone surviving or not.
+
+I am motivated to finish this project, since I want to get involved with Kaggle. A journey of a thousand miles starts with a single step and also begins at the door.
 
 ### Problem Statement
 
@@ -22,7 +26,7 @@ Note: _(approx. 1 paragraph)_
 
 In this section, clearly describe the problem that is to be solved. The problem described should be well defined and should have at least one relevant potential solution. Additionally, describe the problem thoroughly such that it is clear that the problem is quantifiable (the problem can be expressed in mathematical or logical terms) , measurable (the problem can be measured by some metric and clearly observed), and replicable (the problem can be reproduced and occurs more than once).
 
-### Datasets and Inputs
+### Data sets and Inputs
 
 Note: _(approx. 2-3 paragraphs)_
 
