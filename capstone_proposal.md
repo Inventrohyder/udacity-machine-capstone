@@ -14,7 +14,7 @@ Note: _(approx. 2-3 pages)_
 
 The Titanic data set is famous data set that is part of an introductory Kaggle competition.
 
-> Citation: Kaggle. (n.d.). Titanic: Machine Learning from Disaster. Retrieved from <https://www.kaggle.com/c/titanic/overview>
+> **Citation:** Kaggle. (n.d.). Titanic: Machine Learning from Disaster. Retrieved from <https://www.kaggle.com/c/titanic/overview>
 
 It is about the infamous RMS Titanic, an "unsinkable" ship that made the headlines on April 15, 1912. Out of the 2224 passengers and crew, only 1502 of them survived. Although it comes down to chance if a person survives, the data shows that some groups of people have a higher chance of surviving. To solve the problem of identifying those who have a higher chance of survival we will have to come up with a machine learning model that can gives us the probability of someone surviving or not.
 
@@ -28,9 +28,15 @@ To quantify the problem we would have a test data set that would help us evaluat
 
 ### Data sets and Inputs
 
-Note: _(approx. 2-3 paragraphs)_
+The data set is obtained from Kaggle's Titanic competition. We will only make use of the train data set since we don't know the labels of the test data set and we want to be able to evaluate our models ourselves.
 
-In this section, the data set(s) and/or input(s) being considered for the project should be thoroughly described, such as how they relate to the problem and why they should be used. Information such as how the data set or input is (was) obtained, and the characteristics of the data set or input, should be included with relevant references and citations as necessary It should be clear how the data set(s) or input(s) will be used in the project and whether their use is appropriate given the context of the problem.
+> **Citation:** Kaggle. (n.d.). Titanic: Machine Learning from Disaster. Retrieved from <https://www.kaggle.com/c/titanic/overview>
+
+The data contains information on the amount of fair someone paid, the number of parents or children involved with them as well as other characteristics. The labels are only provided in the _train_ data set.
+
+The different characteristics of the people on board will help us generate a model that identifies that patterns that increase chances of survival.
+
+Finally, when we deploy the model, we can send in characteristics of a person and get their chance of survival.
 
 ### Solution Statement
 
