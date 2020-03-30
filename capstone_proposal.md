@@ -46,9 +46,7 @@ In the deployed web app that we can input characteristics of a person, the outpu
 
 ### Benchmark Model
 
-Note: _(approximately 1-2 paragraphs)_
-
-In this section, provide the details for a benchmark model or result that relates to the domain, problem statement, and intended solution. Ideally, the benchmark model or result contextualizes existing methods or known information in the domain and problem given, which could then be objectively compared to the solution. Describe how the benchmark model or result is measurable (can be measured by some metric and clearly observed) with thorough detail.
+The benchmark model to use would be a statistical model. One would be a SkLearn decision tree model. The decision tree would not lead to a probability but would give us the binary values if a person survives or not. We can therefore compare this model with our proposed solution by rounding of the probabilities returned by the solution model. By comparing the rate of false positives and false negatives, we will be able to identify which model does a better job.
 
 ### Evaluation Metrics
 
