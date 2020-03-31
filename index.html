@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Titanic Prediction Web App</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <script>
+        "use strict";
+        function submitForm(oFormElement) {
+            var xhr = new XMLHttpRequest();
+            xhr.onload = function () {
+                var result = parseFloat(xhr.responseText);
+                let prediction = Math.round(result);
+
+                let output = ''
+
+                var resultElement = document.getElementById('result');
+                let result_class = 'alert ';
+
+                if (prediction == 0) {
+                    result_class += 'alert-danger';
+                    output = 'a <strong>higher</strong> chance of <strong>not surviving</strong>'
+                } else {
+                    result_class += 'alert-success';
+                    output = 'a <strong>higher</strong> chance of <strong>surviving</strong>'
+                }
+                resultElement.className = result_class;
+                resultElement.innerHTML = "The person has a " + output;
+                resultElement.style.visibility = "visible";
+            }
+            xhr.open(oFormElement.method, oFormElement.action, true);
+            var review = document.getElementById('review');
+
+            var data = "" +
+                document.getElementById('Pclass').value + ", " +
+                document.getElementById('Sex').value + ", " +
+                document.getElementById('Age').value + ", " +
+                document.getElementById('SibSp').value + ", " +
+                document.getElementById('Parch').value + ", " +
+                document.getElementById('Fare').value
+            xhr.send(data);
+            return false;
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Survival on Titanic</h1>
+        <p>Enter the characteristics of the person you want to find their chance of survival </p>
+        <!-- <form method="POST" action="https://putsreq.com/YhCr5h5kSr0sCfi7NyNF" onsubmit="return submitForm(this);"> -->
+        <form method="POST" action="https://q2l24sy376.execute-api.us-east-1.amazonaws.com/prod"
+            onsubmit="return submitForm(this);">
+
+            <div class="form-group form-check">
+                <label for="Pclass">Ticket class:</label>
+                <select required class="custom-select" id="Pclass">
+                    <option value="1">1st (upper)</option>
+                    <option value="2">2nd (middle)</option>
+                    <option selected value="3">3rd (lower)</option>
+                </select>
+            </div>
+
+            <div class="form-group form-check">
+                <label for="Sex">Gender:</label>
+                <select required class="custom-select" id="Sex">
+                    <option selected value="0">Male</option>
+                    <option value="1">Female</option>
+                </select>
+            </div>
+
+            <div class="form-group form-check">
+                <label for="Age">Age:</label>
+                <input required type="number" class="form-control" id="Age" min=0 max=118 value=0>
+            </div>
+
+            <div class="form-group form-check">
+                <label for="SibSp">Number of Siblings and spouses accompanying:</label>
+                <input required type="number" class="form-control" id="SibSp" min=0 max=100 value=0>
+            </div>
+
+            <div class="form-group form-check">
+                <label for="Parch">Number of parents and children accompany:</label>
+                <input required type="number" class="form-control" id="Parch" min=0 max=118 value=0>
+            </div>
+
+            <div class="form-group form-check">
+                <label for="Fare">The fare price of the person's ticket:</label>
+                <input required type="number" class="form-control" id="Fare" min=0 max=10000 value=100>
+            </div>
+
+            <button type="submit" onclick='document.getElementById("result").style.visibility="hidden"'
+                class="btn btn-primary">Submit</button>
+        </form>
+
+        </br>
+
+        <div class="alert" role="alert" id="result"></div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
