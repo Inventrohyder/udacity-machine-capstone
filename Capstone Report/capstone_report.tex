@@ -342,23 +342,29 @@ ask yourself when writing this section:
 
 \subsection{Justification}\label{justification}
 
-In this section, your model's final solution and its results should be
-compared to the benchmark you established earlier in the project using
-some type of statistical analysis. You should also justify whether these
-results and the solution are significant enough to have solved the
-problem posed in the project. Questions to ask yourself when writing
-this section:
+The final model is a PyTorch Neural Network trained with the
+hyper-parameters described in section \ref{algorithms-and-techniques}.
 
-\begin{itemize}
-\item
-  \emph{Are the final results found stronger than the benchmark result
-  reported earlier?}
-\item
-  \emph{Have you thoroughly analyzed and discussed the final solution?}
-\item
-  \emph{Is the final solution significant enough to have solved the
-  problem?}
-\end{itemize}
+The results we found with this model are much stronger than the benchmark
+result and therefore, is a much better model to use. It does a much better
+job in labelling a person as survived or not.
+
+\begin{center}
+    \begin{table}[h]
+        \begin{tabular}{lrrrr}
+            \hline
+            {} &     SKLearn &     XGBoost  &         PyTorch (30) &  PyTorch (20) \\
+            \hline
+            precision &     0.712 &     0.926 &     0.854 &     0.818  \\
+            recall    &     0.740 &     0.500 &     0.700 &     0.720  \\
+            \hline
+            Accuracy  &     0.804 &     0.811 &   \textbf{0.853} &    0.846  \\
+            \hline
+        \end{tabular}
+        \caption{\label{tab:data-results}The evaluation metrics of the different models 
+            \emph{The 30 and 20 represent the number of hidden layers}}
+    \end{table}
+\end{center}
 
 \section{Conclusion}\label{conclusion}
 
