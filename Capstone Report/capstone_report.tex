@@ -259,24 +259,32 @@ unless it is correct and contains only the variables we require.
 
 \subsection{Implementation}\label{implementation}
 
-In this section, the process for which metrics, algorithms, and
-techniques that you implemented for the given data will need to be
-clearly documented. It should be abundantly clear how the implementation
-was carried out, and discussion should be made regarding any
-complications that occurred during this process. Questions to ask
-yourself when writing this section:
+In this section, we first had to train the models, then creating the web app and API endpoint.
 
+The sci-kit learn Decision Tree is just a statistical model that doesn't require training.
+
+To Train the XGBoost model, we fit training data and optimize on 
+reducing the validation error rate.
+
+For the PyTorch model, which has the following architecture:
 \begin{itemize}
-\item
-  \emph{Is it made clear how the algorithms and techniques were
-  implemented with the given data sets or input data?}
-\item
-  \emph{Were there any complications with the original metrics or
-  techniques that required changing prior to acquiring a solution?}
-\item
-  \emph{Was there any part of the coding process (e.g., writing
-  complicated functions) that should be documented?}
+    \item Fully connected layer taking in the 6 inputs
+    \item Passing it to the 30 hidden Fully connected Layers
+    \item And outputting a single a value
 \end{itemize}
+The loss function that we use is the BCELoss and we use the Adam optimizer.
+
+An important update that occurred after implementing the solutions, was
+that only the XGBoost model produces a probability while the other two models 
+produce a binary value representing survival.
+
+During the application development cycle, we first had to deploy the chosen model,
+then create a lambda function that invokes the model and finally create an API gateway
+that will allow us to send and receive data from our lambda function.
+
+A complication that occurred was that the lambda function has to carry out 
+extra computations to save the user's input into a .npy file then send that 
+to our model for inference.
 
 \subsection{Refinement}\label{refinement}
 
