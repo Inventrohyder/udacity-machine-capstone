@@ -1,4 +1,5 @@
 \documentclass{article}
+\usepackage{float}
 \usepackage{amsmath}
 \usepackage{hyperref}
 \usepackage{enumerate}
@@ -79,35 +80,101 @@ Note: \emph{(approx. 2-4 pages)}
 
 \subsection{Data Exploration}\label{data-exploration}
 
-In this section, you will be expected to analyze the data you are using
-for the problem. This data can either be in the form of a data set (or
-data sets), input data (or input files), or even an environment. The
-type of data should be thoroughly described and, if possible, have basic
-statistics and information presented (such as discussion of input
-features or defining characteristics about the input or environment).
-Any abnormalities or interesting qualities about the data that may need
-to be addressed have been identified (such as features that need to be
-transformed or the possibility of outliers). Questions to ask yourself
-when writing this section:
+The train csv file which is the only one we will use since the test csv file, doesn't
+contain labels making it useless in evaluating our models. It contains data on 891
+passengers.
 
-\begin{itemize}
-\item
-  \emph{If a data set is present for this problem, have you thoroughly
-  discussed certain features about the data set? Has a data sample been
-  provided to the reader?}
-\item
-  \emph{If a data set is present for this problem, are statistics about
-  the data set calculated and reported? Have any relevant results from
-  this calculation been discussed?}
-\item
-  \emph{If a data set is \textbf{not} present for this problem, has
-  discussion been made about the input space or input data for your
-  problem?}
-\item
-  \emph{Are there any abnormalities or characteristics about the input
-  space or data set that need to be addressed? (categorical variables,
-  missing values, outliers, etc.)}
-\end{itemize}
+\begin{table} [H]
+    \begin{tabular}{ ||p{2cm}||p{6cm}|p{2.5cm}||  }
+        \hline
+        \multicolumn{3}{|c|}{\textbf{Data columns}} \\
+        \hline
+        \textbf{Variable} & \textbf{Definition} & \textbf{Key} \\
+        \hline\hline
+        \textbf{Survived} & \emph{Label} if a person survived or not & $0$ = No; $1$ = Yes \\ 
+        \hline \hline
+        \textbf{Pclass} & 
+            Ticket class
+            \newline
+            \emph{Proxy for  socioeconomic status (SES)} &
+            1 = 1st (upper), 
+            \newline 2 = 2nd (middle), 
+            \newline 3 = 3rd (lower) \\
+        \hline
+        \textbf{Sex} & The gender of the person & {} \\ 
+        \hline
+        \textbf{Age} & The age in years & {} \\ 
+        \hline
+        \textbf{SibSp} &
+            \# of siblings and spouses aboard
+            \newline
+            \newline
+            \emph{Note:} 
+            Sibling = (brother, sister, stepbrother, stepsister)
+            \newline
+            Spouse = (husband, wife)
+            & {} \\ 
+        \hline
+        \textbf{Parch} & 
+            \# Parents and children aboard
+            \newline
+            \newline
+            \emph{Note:} 
+            Parent = (mother, father)
+            \newline
+            Child = (daughter, son, stepdaughter, stepson)
+            & {} \\ 
+        \hline
+        \textbf{Fare} & Passenger fare & {} \\ 
+        \hline
+        Embarked & Port of embarkation & 
+            C = Cherbourg,
+            \newline Q = Queenstown, 
+            \newline S = Southampton \\ 
+        \hline
+        PassengerId  & A unique number for each person &  \\
+        \hline
+        Name & The Name of the passenger & {} \\
+        \hline
+        Ticket & The unique ticket number & {} \\ 
+        \hline
+        Cabin & Cabin number & {} \\ 
+        \hline
+   \end{tabular}
+   \caption{\label{tab:data-columns}The variables within the data set}
+\end{table}
+
+The columns that are not bolded have various problems such as having many 
+null values (e.g. Cabin) or not being relevant in solving the problem
+(e.g. PassengerId) and will not be used to build the features of the models.
+
+\begin{table} [H]
+    \begin{tabular}{lrrrrrr}
+        \hline
+        {} &     Survived &      Pclass &         Age &       SibSp &       Parch &        Fare \\
+        \hline
+        count &   891.000000 &  891.000000 &  714.000000 &  891.000000 &  891.000000 &  891.000000 \\
+        mean  &    0.383838 &    2.308642 &   29.699118 &    0.523008 &    0.381594 &   32.204208 \\
+        std   &    0.486592 &    0.836071 &   14.526497 &    1.102743 &    0.806057 &   49.693429 \\
+        min   &    0.000000 &    1.000000 &    0.420000 &    0.000000 &    0.000000 &    0.000000 \\
+        25\%  &    0.000000 &    2.000000 &   20.125000 &    0.000000 &    0.000000 &    7.910400 \\
+        50\%  &    0.000000 &    3.000000 &   28.000000 &    0.000000 &    0.000000 &   14.454200 \\
+        75\%  &    1.000000 &    3.000000 &   38.000000 &    1.000000 &    0.000000 &   31.000000 \\
+        max   &    1.000000 &    3.000000 &   80.000000 &    8.000000 &    6.000000 &  512.329200 \\
+        \hline
+    \end{tabular}
+    \caption{\label{tab:data-stats}Statistics of the data before cleaning and processing}
+\end{table}
+
+Table \ref{tab:data-stats} gives us interesting insights into the data. The mean of survived
+tells us that most people among the 891 didn't survive. Since the mean is much closer
+to 0 while the median is at 0.
+
+The average age of the passengers we have is around 30 years old.
+
+To process the data we first map the gender values to the following male = 0, female = 1.
+Then, only pick the columns we require and finally drop all the rows with
+null values.
 
 \subsection{Exploratory
 Visualization}\label{exploratory-visualization}
