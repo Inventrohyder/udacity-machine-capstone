@@ -174,14 +174,10 @@ to 0 while the median is at 0.
 
 The average age of the passengers we have is around 30 years old.
 
-To process the data we first map the gender values to the following male = 0, female = 1.
-Then, only pick the columns we require and finally drop all the rows with
-null values.
-
 \subsection{Exploratory
 Visualization}\label{exploratory-visualization}
 
-To visualize the data we first have to clean the data set.
+To visualize the data we first have to clean the data set as discussed in \ref{data-preprocessing}.
 
 \begin{figure}[H]
     \includegraphics[width=\linewidth]{pairplot}
@@ -236,24 +232,16 @@ Note: \emph{(approx. 3-5 pages)}
 
 \subsection{Data Preprocessing}\label{data-preprocessing}
 
-In this section, all of your preprocessing steps will need to be clearly
-documented, if any were necessary. From the previous section, any of the
-abnormalities or characteristics that you identified about the data set
-will be addressed and corrected here. Questions to ask yourself when
-writing this section:
+For processing we begin by cleaning the data then splitting it into training, validation and test data sets.
+To clean the data we:
+\begin{enumerate}
+    \item first, map the gender values to the following: male = 0, female = 1.
+    \item then, only pick the columns (the bolded variables in table \ref{tab:data-columns}) we require
+    \item and finally drop all the rows with null values.
+\end{enumerate}
 
-\begin{itemize}
-\item
-  \emph{If the algorithms chosen require preprocessing steps like
-  feature selection or feature transformations, have they been properly
-  documented?}
-\item
-  \emph{Based on the \textbf{Data Exploration} section, if there were
-  abnormalities or characteristics that needed to be addressed, have
-  they been properly corrected?}
-\item
-  \emph{If no preprocessing is needed, has it been made clear why?}
-\end{itemize}
+During inference using the web app, we prevent users from submitting data for inference,
+unless it is correct and contains only the variables we require.
 
 \subsection{Implementation}\label{implementation}
 
