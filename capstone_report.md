@@ -2,8 +2,9 @@
 
 ## Capstone Project
 
-Joe Udacity  
-December 31st, 2050
+Haitham Alhad Hyder
+
+March 31st, 2020
 
 ## I. Definition
 
