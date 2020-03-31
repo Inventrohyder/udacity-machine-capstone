@@ -3,6 +3,8 @@
 \usepackage{amsmath}
 \usepackage{hyperref}
 \usepackage{enumerate}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
 \usepackage[style=authoryear]{biblatex}
 \addbibresource{citations.bib}
 
@@ -179,22 +181,17 @@ null values.
 \subsection{Exploratory
 Visualization}\label{exploratory-visualization}
 
-In this section, you will need to provide some form of visualization
-that summarizes or extracts a relevant characteristic or feature about
-the data. The visualization should adequately support the data being
-used. Discuss why this visualization was chosen and how it is relevant.
-Questions to ask yourself when writing this section:
+To visualize the data we first have to clean the data set.
 
-\begin{itemize}
-\item
-  \emph{Have you visualized a relevant characteristic or feature about
-  the data set or input data?}
-\item
-  \emph{Is the visualization thoroughly analyzed and discussed?}
-\item
-  \emph{If a plot is provided, are the axes, title, and datum clearly
-  defined?}
-\end{itemize}
+\begin{figure}[H]
+    \includegraphics[width=\linewidth]{pairplot}
+    \caption{A pair plot of the cleaned columns that helps us to start identifying patterns
+    of features that might increase chances of survival}
+    \label{fig: pair-plot}
+\end{figure}
+
+The figure \ref{fig: pair-plot} plot suggests that the lower \emph{Pchar} value a person has, 
+the higher their chances of survival.
 
 \subsection{Algorithms and
 Techniques}\label{algorithms-and-techniques}
