@@ -20,11 +20,17 @@ Only 1502 of the 2224 on board the ship survived and was a big tragedy since it 
 
 ### Problem Statement
 
-In this section, you will want to clearly define the problem that you are trying to solve, including the strategy (outline of tasks) you will use to achieve the desired solution. You should also thoroughly discuss what the intended solution will be for this problem. Questions to ask yourself when writing this section:
+We will be building a model that inputs the characteristics of a person and outputs a value between 0 and 1 giving us the chance of someone surviving.
 
-- _Is the problem statement clearly defined? Will the reader understand what you are expecting to solve?_
-- _Have you thoroughly discussed how you will attempt to solve the problem?_
-- _Is an anticipated solution clearly defined? Will the reader understand what results you are looking for?_
+The model that we come up with should be capable of identifying patterns that affect the chance of survival and therefore, by rounding the probability it outputs we can tell if that person's prediction is survival or not.
+
+The steps to solving this problem are as follows:
+
+1. Loading up the train data and split it into a train, validation and test data sets.
+2. Build an XGBoost binary linear classifier as well as a PyTorch neural network.
+3. At the same time we build an SKLearn decision tree which will be our Statistical base model that will help us compare it to our ML(Machine Learning) models.
+4. After evaluating all the models and picking the best one, we will deploy to an API endpoint.
+5. Finally we will create a web page that communicates with our model; sending in a user's chosen passenger characteristics and outputting the probability of survival.
 
 ### Metrics
 
