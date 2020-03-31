@@ -23,7 +23,7 @@ Note:\emph{(approx. 1-2 pages)}
 \subsection*{Project Overview}\label{project-overview}
 
 The project involves the infamous Titanic sinkage of 1912. The data set
-and inspiration to solve the problem are from the Titanic challenge
+and inspiration to solve the problem from the Titanic challenge
 Kaggle competition \parencite{kaggle}.
 
 Only 1502 of the 2224 on board the ship survived and was a big tragedy
@@ -288,6 +288,20 @@ to our model for inference.
 
 \subsection{Refinement}\label{refinement}
 
+Firstly, we used the sci-kit learn model that had an accuracy of 80\%,
+next, we made a new model, this time being an XgBoost model that yielded 
+and 81\% accuracy which is not a great leap forward.
+
+Therefore, going the extra mile and using a neural network in the hopes of it
+learning the different patterns involved within the data set might yield a higher
+accuracy and it did. The PyTorch model test set accuracy was 85\%.
+
+To improve our already great model, one option was reducing the model complexity
+and using 20 instead of 30 hidden layers. The accuracy drops to 84\% however, 
+recall increases from 70\% to 72\%. Since we mentioned that recall and precision
+do not matter as much as accuracy, we stick with our first PyTorch model as the best
+model so far.
+
 In this section, you will need to discuss the process of improvement you
 made upon the algorithms and techniques you used in your implementation.
 For example, adjusting parameters for certain models to acquire improved
@@ -295,17 +309,6 @@ solutions would fall under the refinement category. Your initial and
 final solutions should be reported, as well as any significant
 intermediate results as necessary. Questions to ask yourself when
 writing this section:
-
-\begin{itemize}
-\item
-  \emph{Has an initial solution been found and clearly reported?}
-\item
-  \emph{Is the process of improvement clearly documented, such as what
-  techniques were used?}
-\item
-  \emph{Are intermediate and final solutions clearly reported as the
-  process is improved?}
-\end{itemize}
 
 \subsection{Results}\label{kaggleresults}
 
