@@ -12,10 +12,11 @@ Note:_(approx. 1-2 pages)_
 
 ### Project Overview
 
-In this section, look to provide a high-level overview of the project in layman's terms. Questions to ask yourself when writing this section:
+The project involves the infamous Titanic sinkage of 1912. The data set and inspiration to solve the problem are from the Titanic challenge Kaggle competition.
 
-- _Has an overview of the project been provided, such as the problem domain, project origin, and related data sets or input data?_
-- _Has enough background information been given so that an uninformed reader would understand the problem domain and following problem statement?_
+> **Citation:** Kaggle. (n.d.). Titanic: Machine Learning from Disaster. Retrieved from <https://www.kaggle.com/c/titanic/overview>
+
+Only 1502 of the 2224 on board the ship survived and was a big tragedy since it was labelled the "unsinkable" ship. We will be building a model that will identify the chance of survival a person has.
 
 ### Problem Statement
 
