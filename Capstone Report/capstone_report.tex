@@ -1,4 +1,5 @@
 \documentclass{article}
+\usepackage{amsmath}
 \usepackage{hyperref}
 \usepackage{enumerate}
 \usepackage[style=authoryear]{biblatex}
@@ -61,20 +62,16 @@ The steps to solving this problem are as follows:
 
 \subsection{Metrics}\label{metrics}
 
-In this section, you will need to clearly define the metrics or
-calculations you will use to measure performance of a model or result in
-your project. These calculations and metrics should be justified based
-on the characteristics of the problem and problem domain. Questions to
-ask yourself when writing this section:
+The main criteria that would help us evaluate the models we create is
+accuracy.
 
-\begin{itemize}
-\item
-  \emph{Are the metrics you've chosen to measure the performance of your
-  models clearly discussed and defined?}
-\item
-  \emph{Have you provided reasonable justification for the metrics
-  chosen based on the problem and solution?}
-\end{itemize}
+\[ 
+  \text{accuracy $=\frac{\text{true positive} + \text{true negative}}{\text{dataset size}}$}
+\]
+
+Since we are not extremely concerned with neither false negatives nor false positives,
+using accuracy as the chosen metric is much better than recall or precision.
+We only want to know out of the total inputs what percentage of them did we label correctly.
 
 \section{Analysis}
 
